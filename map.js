@@ -5,16 +5,28 @@
  */
 
 // Using a for loop
+let nums = [1, 2, 3, 4, 5];
+let results = [];
 
+for (let num of nums) {
+  results.push(num * 2)
+};
+
+console.log(results);
 
 // Using map()
+const multiplyByTwo = function (num) {
+  return num * 2;
+};
 
-
+let mapResult = nums.map(multiplyByTwo);
+console.log(mapResult)
 // Simplified w/ map()
-
-
+let mapSimp = nums.map(function(num)  {return num * 2})
+console.log(mapSimp)
 // Simplfied w/ map() + arrow function
-
+let mapSimplify = nums.map(num => num *2)
+console.log(mapSimplify)
 
 // With objects:
 const students = [
@@ -37,3 +49,6 @@ const students = [
     skill: 'CSS'
   },
 ];
+
+const studentWithIds = students.map(({name, id, skill, age}) => ({name, id, skill}))
+console.log (studentWithIds);
